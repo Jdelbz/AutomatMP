@@ -7,6 +7,10 @@ package view;
 
 import java.awt.Color;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 
 /**
  *
@@ -21,6 +25,7 @@ public class MainView extends javax.swing.JFrame {
     private int location = 0; // 0 = earth, 1 = mars
     private int numOfSelected = 0; // 0 none, 2 max
     private int humanSelected = 0;
+    private int humanSelected1 = 0;
     private int cowSelected = 0;
     private int lionSelected = 0;
     private int grainSelected = 0;
@@ -79,26 +84,81 @@ public class MainView extends javax.swing.JFrame {
         SwapBtn.setBackground(new java.awt.Color(255, 255, 255));
         SwapBtn.setText("->");
         SwapBtn.setOpaque(false);
+        SwapBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SwapBtnActionPerformed(evt);
+            }
+        });
 
         HumanRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
+        HumanRight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HumanRightMouseClicked(evt);
+            }
+        });
 
         HumanRight1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
+        HumanRight1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HumanRight1MouseClicked(evt);
+            }
+        });
 
         LionRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lion.png"))); // NOI18N
+        LionRight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LionRightMouseClicked(evt);
+            }
+        });
 
         GrainRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grain.png"))); // NOI18N
+        GrainRight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GrainRightMouseClicked(evt);
+            }
+        });
 
         CowRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cow.png"))); // NOI18N
+        CowRight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CowRightMouseClicked(evt);
+            }
+        });
 
         HumanLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
+        HumanLeft.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HumanLeftMouseClicked(evt);
+            }
+        });
 
         HumanLeft1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
+        HumanLeft1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HumanLeft1MouseClicked(evt);
+            }
+        });
 
         LionLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lion.png"))); // NOI18N
+        LionLeft.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LionLeftMouseClicked(evt);
+            }
+        });
 
         GrainLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grain.png"))); // NOI18N
+        GrainLeft.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GrainLeftMouseClicked(evt);
+            }
+        });
 
         CowLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cow.png"))); // NOI18N
+        CowLeft.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CowLeftMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout BGPanelLayout = new javax.swing.GroupLayout(BGPanel);
         BGPanel.setLayout(BGPanelLayout);
@@ -191,6 +251,325 @@ public class MainView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void HumanLeftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HumanLeftMouseClicked
+        // TODO add your handling code here:
+        if(location == 0 && humanSelected == 0 && numOfSelected < 2){
+            numOfSelected++;
+            humanSelected = 1;
+            HumanLeft.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Human.png"))));
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected1 == 1){
+                    //setIcon to images/Spaceship-HumanHuman.png
+                } else if(lionSelected == 1){
+                    //setIcon to images/Spaceship-HumanLion.png
+                } else if(cowSelected == 1){
+                    //setIcon to images/Spaceship-CowHuman.png
+                } else if(grainSelected == 1){
+                    //setIcon to images/Spaceship-GrainHuman.png
+                }
+            }
+            //spaceship will have 1 human
+        }
+    }//GEN-LAST:event_HumanLeftMouseClicked
+
+    private void HumanLeft1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HumanLeft1MouseClicked
+        // TODO add your handling code here:
+        if(location == 0 && humanSelected1 == 0 && numOfSelected <2){
+            numOfSelected++;
+            humanSelected1 = 1;
+            HumanLeft1.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Human.png"))));
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected == 1){
+                    //setIcon to images/Spaceship-HumanHuman.png
+                } else if(lionSelected == 1){
+                    //setIcon to images/Spaceship-HumanLion.png
+                } else if(cowSelected == 1){
+                    //setIcon to images/Spaceship-CowHuman.png
+                } else if(grainSelected == 1){
+                    //setIcon to images/Spaceship-GrainHuman.png
+                }
+            }
+            //spaceship will have 1 human
+        }
+    }//GEN-LAST:event_HumanLeft1MouseClicked
+
+    private void LionLeftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LionLeftMouseClicked
+        // TODO add your handling code here:
+        if(location == 0 && lionSelected == 0 && numOfSelected <2){
+            numOfSelected++;
+            lionSelected = 1;
+            LionLeft.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Lion.png"))));
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected == 1 || humanSelected1 == 1){
+                    //setIcon to images/Spaceship-HumanLion.png
+                } else if(cowSelected == 1){
+                    //setIcon to images/Spaceship-CowLion.png
+                } else if(grainSelected == 1){
+                    //setIcon to images/Spaceship-GrainLion.png
+                }
+            }
+            //spaceship will have lion
+        }
+    }//GEN-LAST:event_LionLeftMouseClicked
+
+    private void GrainLeftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GrainLeftMouseClicked
+        // TODO add your handling code here:
+        if(location == 0 && grainSelected == 0 && numOfSelected <2){
+            numOfSelected++;
+            grainSelected = 1;
+            GrainLeft.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Grain.png"))));
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected == 1 || humanSelected1 == 1){
+                    //setIcon to images/Spaceship-GrainHuman.png
+                } else if(lionSelected == 1){
+                    //setIcon to images/Spaceship-GrainLion.png
+                } else if(cowSelected == 1){
+                    //setIcon to images/Spaceship-CowGrain.png
+                }
+            }
+            //spaceship will have grain
+        }
+    }//GEN-LAST:event_GrainLeftMouseClicked
+
+    private void CowLeftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CowLeftMouseClicked
+        // TODO add your handling code here:
+        if(location == 0 && cowSelected == 0 && numOfSelected <2){
+            numOfSelected++;
+            cowSelected = 1;
+            CowLeft.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Cow.png")))); //this throws an IOException
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected == 1 || humanSelected1 == 1){
+                    //setIcon to images/Spaceship-CowHuman.png
+                } else if(lionSelected == 1){
+                    //setIcon to images/Spaceship-CowLion.png
+                }else if(grainSelected == 1){
+                    //setIcon to images/Spaceship-CowGrain.png
+                }
+            }
+            //spaceship will have cow
+        }
+    }//GEN-LAST:event_CowLeftMouseClicked
+
+    private void HumanRightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HumanRightMouseClicked
+        // TODO add your handling code here:
+        if(location == 1 && humanSelected == 0 && numOfSelected <2){
+            numOfSelected++;
+            humanSelected = 1;
+            HumanRight.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Human.png"))));
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected1 == 1){
+                    //setIcon to images/Spaceship-HumanHuman.png
+                } else if(lionSelected == 1){
+                    //setIcon to images/Spaceship-HumanLion.png
+                } else if(cowSelected == 1){
+                    //setIcon to images/Spaceship-CowHuman.png
+                } else if(grainSelected == 1){
+                    //setIcon to images/Spaceship-GrainHuman.png
+                }
+            }
+            //spaceship will have 1 human
+        }
+    }//GEN-LAST:event_HumanRightMouseClicked
+
+    private void HumanRight1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HumanRight1MouseClicked
+        // TODO add your handling code here:
+        if(location == 1 && humanSelected1 == 0 && numOfSelected <2){
+            numOfSelected++;
+            humanSelected1 = 1;
+            HumanRight1.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Human.png"))));
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected == 1){
+                    //setIcon to images/Spaceship-HumanHuman.png
+                } else if(lionSelected == 1){
+                    //setIcon to images/Spaceship-HumanLion.png
+                } else if(cowSelected == 1){
+                    //setIcon to images/Spaceship-CowHuman.png
+                } else if(grainSelected == 1){
+                    //setIcon to images/Spaceship-GrainHuman.png
+                }
+            }
+            //spaceship will have 1 human
+        }
+    }//GEN-LAST:event_HumanRight1MouseClicked
+
+    private void LionRightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LionRightMouseClicked
+        // TODO add your handling code here:
+        if(location == 1 && lionSelected == 0 && numOfSelected <2){
+            numOfSelected++;
+            lionSelected = 1;
+            LionRight.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Lion.png"))));
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected == 1 || humanSelected1 == 1){
+                    //setIcon to images/Spaceship-HumanLion.png
+                } else if(cowSelected == 1){
+                    //setIcon to images/Spaceship-CowLion.png
+                } else if(grainSelected == 1){
+                    //setIcon to images/Spaceship-GrainLion.png
+                }
+            }
+            //spaceship will have lion
+        }
+    }//GEN-LAST:event_LionRightMouseClicked
+
+    private void GrainRightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GrainRightMouseClicked
+        // TODO add your handling code here:
+        if(location == 1 && grainSelected == 0 && numOfSelected <2){
+            numOfSelected++;
+            grainSelected = 1;
+            GrainRight.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Grain.png"))));
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected == 1 || humanSelected1 == 1){
+                    //setIcon to images/Spaceship-GrainHuman.png
+                } else if(lionSelected == 1){
+                    //setIcon to images/Spaceship-GrainLion.png
+                } else if(cowSelected == 1){
+                    //setIcon to images/Spaceship-CowGrain.png
+                }
+            }
+            //spaceship will have grain
+        }
+    }//GEN-LAST:event_GrainRightMouseClicked
+
+    private void CowRightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CowRightMouseClicked
+        // TODO add your handling code here:
+        if(location == 1 && cowSelected == 0 && numOfSelected <2){
+            numOfSelected++;
+            cowSelected = 1;
+            CowRight.setVisible(false);
+            if(numOfSelected == 1){
+                try{
+                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Cow.png")))); //this throws an IOException
+                } catch(IOException e){
+          
+                }
+            }else{
+                if(humanSelected == 1 || humanSelected1 == 1){
+                    //setIcon to images/Spaceship-CowHuman.png
+                } else if(lionSelected == 1){
+                    //setIcon to images/Spaceship-CowLion.png
+                }else if(grainSelected == 1){
+                    //setIcon to images/Spaceship-CowGrain.png
+                }
+            }
+            //spaceship will have cow
+        }
+    }//GEN-LAST:event_CowRightMouseClicked
+
+    private void SwapBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SwapBtnActionPerformed
+        // TODO add your handling code here:
+        if(location == 0){
+            if(humanSelected == 1){
+                HumanRight.setVisible(true);
+                humanSelected = 0;
+                numOfSelected--;
+            }
+            if(humanSelected1 == 1){
+                HumanRight1.setVisible(true);
+                humanSelected1 = 0;
+                numOfSelected--;
+            }
+            if(lionSelected == 1){
+                LionRight.setVisible(true);
+                lionSelected = 0;
+                numOfSelected--;
+            }
+            if(cowSelected == 1){
+                CowRight.setVisible(true);
+                cowSelected = 0;
+                numOfSelected--;
+            }
+            if(grainSelected == 1){
+                GrainRight.setVisible(true);
+                grainSelected = 0;
+                numOfSelected--;
+            }
+            SwapBtn.setLabel("<-");
+            location = 1;
+        } else if(location == 1){
+            if(humanSelected == 1){
+                HumanLeft.setVisible(true);
+                humanSelected = 0;
+                numOfSelected--;
+            }
+            if(humanSelected1 == 1){
+                HumanLeft1.setVisible(true);
+                humanSelected1 = 0;
+                numOfSelected--;
+            }
+            if(lionSelected == 1){
+                LionLeft.setVisible(true);
+                lionSelected = 0;
+                numOfSelected--;
+            }
+            if(cowSelected == 1){
+                CowLeft.setVisible(true);
+                cowSelected = 0;
+                numOfSelected--;
+            }
+            if(grainSelected == 1){
+                GrainLeft.setVisible(true);
+                grainSelected = 0;
+                numOfSelected--;
+            }
+            SwapBtn.setLabel("->");
+            location = 0;
+        }
+    }//GEN-LAST:event_SwapBtnActionPerformed
 
     /**
      * @param args the command line arguments

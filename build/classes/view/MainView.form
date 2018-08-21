@@ -171,6 +171,9 @@
             <Property name="text" type="java.lang.String" value="-&gt;"/>
             <Property name="opaque" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SwapBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="HumanRight">
           <Properties>
@@ -178,6 +181,9 @@
               <Image iconType="3" name="/images/Human.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="HumanRightMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="HumanRight1">
           <Properties>
@@ -185,6 +191,9 @@
               <Image iconType="3" name="/images/Human.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="HumanRight1MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="LionRight">
           <Properties>
@@ -192,6 +201,9 @@
               <Image iconType="3" name="/images/lion.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LionRightMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="GrainRight">
           <Properties>
@@ -199,6 +211,9 @@
               <Image iconType="3" name="/images/grain.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GrainRightMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="CowRight">
           <Properties>
@@ -206,6 +221,9 @@
               <Image iconType="3" name="/images/cow.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CowRightMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="HumanLeft">
           <Properties>
@@ -213,6 +231,9 @@
               <Image iconType="3" name="/images/Human.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="HumanLeftMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="HumanLeft1">
           <Properties>
@@ -220,6 +241,9 @@
               <Image iconType="3" name="/images/Human.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="HumanLeft1MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="LionLeft">
           <Properties>
@@ -227,6 +251,9 @@
               <Image iconType="3" name="/images/lion.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LionLeftMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="GrainLeft">
           <Properties>
@@ -234,6 +261,9 @@
               <Image iconType="3" name="/images/grain.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GrainLeftMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="CowLeft">
           <Properties>
@@ -241,6 +271,9 @@
               <Image iconType="3" name="/images/cow.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CowLeftMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
