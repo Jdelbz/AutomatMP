@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.Color;
 import javax.swing.BoxLayout;
 
 /**
@@ -16,9 +17,26 @@ public class MainView extends javax.swing.JFrame {
     /**
      * Creates new form MainView
      */
+    
+    private int location = 0; // 0 = earth, 1 = mars
+    private int numOfSelected = 0; // 0 none, 2 max
+    private int humanSelected = 0;
+    private int cowSelected = 0;
+    private int lionSelected = 0;
+    private int grainSelected = 0;
+    
     public MainView() {
         initComponents();
+        initImages();
         setVisible(true);
+    }
+    
+    public void initImages(){
+        HumanRight.setVisible(false);
+        HumanRight1.setVisible(false);
+        LionRight.setVisible(false);
+        GrainRight.setVisible(false);
+        CowRight.setVisible(false);
     }
 
     /**
@@ -30,93 +48,144 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        MarsPane = new javax.swing.JPanel();
-        EarthPane = new javax.swing.JPanel();
-        Human = new javax.swing.JLabel();
-        Cow = new javax.swing.JLabel();
-        Lion = new javax.swing.JLabel();
-        Grain = new javax.swing.JLabel();
+        BGPanel = new javax.swing.JPanel();
         ShipImage = new javax.swing.JLabel();
-        SwapBtn = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        SwapBtn = new javax.swing.JButton();
+        HumanRight = new javax.swing.JLabel();
+        HumanRight1 = new javax.swing.JLabel();
+        LionRight = new javax.swing.JLabel();
+        GrainRight = new javax.swing.JLabel();
+        CowRight = new javax.swing.JLabel();
+        HumanLeft = new javax.swing.JLabel();
+        HumanLeft1 = new javax.swing.JLabel();
+        LionLeft = new javax.swing.JLabel();
+        GrainLeft = new javax.swing.JLabel();
+        CowLeft = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        MarsPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        MarsPane.setLayout(new javax.swing.BoxLayout(MarsPane, javax.swing.BoxLayout.LINE_AXIS));
+        BGPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        EarthPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        ShipImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Spaceship-default.png"))); // NOI18N
 
-        Human.setText("HUMAN PLACEHOLDER");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/earth.jpg"))); // NOI18N
 
-        Cow.setText("COW PLACEHOLDER");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mars.jpg"))); // NOI18N
 
-        Lion.setText("LION PLACEHOLDER");
+        SwapBtn.setBackground(new java.awt.Color(255, 255, 255));
+        SwapBtn.setText("->");
+        SwapBtn.setOpaque(false);
 
-        Grain.setText("GRAIN PLACEHOLDER");
+        HumanRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
 
-        javax.swing.GroupLayout EarthPaneLayout = new javax.swing.GroupLayout(EarthPane);
-        EarthPane.setLayout(EarthPaneLayout);
-        EarthPaneLayout.setHorizontalGroup(
-            EarthPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EarthPaneLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(EarthPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Human)
-                    .addComponent(Cow)
-                    .addComponent(Lion)
-                    .addComponent(Grain))
-                .addContainerGap(32, Short.MAX_VALUE))
+        HumanRight1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
+
+        LionRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lion.png"))); // NOI18N
+
+        GrainRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grain.png"))); // NOI18N
+
+        CowRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cow.png"))); // NOI18N
+
+        HumanLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
+
+        HumanLeft1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
+
+        LionLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lion.png"))); // NOI18N
+
+        GrainLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grain.png"))); // NOI18N
+
+        CowLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cow.png"))); // NOI18N
+
+        javax.swing.GroupLayout BGPanelLayout = new javax.swing.GroupLayout(BGPanel);
+        BGPanel.setLayout(BGPanelLayout);
+        BGPanelLayout.setHorizontalGroup(
+            BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BGPanelLayout.createSequentialGroup()
+                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BGPanelLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel1))
+                    .addGroup(BGPanelLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(HumanLeft1)
+                            .addComponent(HumanLeft)
+                            .addComponent(LionLeft)
+                            .addComponent(GrainLeft)
+                            .addComponent(CowLeft))))
+                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(BGPanelLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(SwapBtn))
+                    .addGroup(BGPanelLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(ShipImage)))
+                .addGap(20, 20, 20)
+                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(HumanRight, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(HumanRight1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(LionRight, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGPanelLayout.createSequentialGroup()
+                            .addComponent(GrainRight)
+                            .addGap(10, 10, 10))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGPanelLayout.createSequentialGroup()
+                            .addComponent(CowRight)
+                            .addGap(6, 6, 6))))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
-        EarthPaneLayout.setVerticalGroup(
-            EarthPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EarthPaneLayout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(Human)
-                .addGap(46, 46, 46)
-                .addComponent(Grain)
-                .addGap(50, 50, 50)
-                .addComponent(Cow)
-                .addGap(57, 57, 57)
-                .addComponent(Lion)
+        BGPanelLayout.setVerticalGroup(
+            BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BGPanelLayout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(ShipImage)
+                .addGap(49, 49, 49)
+                .addComponent(SwapBtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(BGPanelLayout.createSequentialGroup()
+                        .addComponent(HumanRight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(HumanRight1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LionRight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GrainRight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CowRight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(BGPanelLayout.createSequentialGroup()
+                        .addComponent(HumanLeft)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(HumanLeft1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LionLeft)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GrainLeft)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CowLeft)
+                        .addGap(43, 43, 43)))
+                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
                 .addContainerGap())
         );
-
-        ShipImage.setText("PLACEHOLDER");
-
-        SwapBtn.setText("PLACEHOLDER FOR BUTTON");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(EarthPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(ShipImage))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(SwapBtn)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
-                .addComponent(MarsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(BGPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(EarthPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(MarsPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(276, 276, 276)
-                .addComponent(ShipImage)
-                .addGap(35, 35, 35)
-                .addComponent(SwapBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(BGPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -158,13 +227,20 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Cow;
-    private javax.swing.JPanel EarthPane;
-    private javax.swing.JLabel Grain;
-    private javax.swing.JLabel Human;
-    private javax.swing.JLabel Lion;
-    private javax.swing.JPanel MarsPane;
+    private javax.swing.JPanel BGPanel;
+    private javax.swing.JLabel CowLeft;
+    private javax.swing.JLabel CowRight;
+    private javax.swing.JLabel GrainLeft;
+    private javax.swing.JLabel GrainRight;
+    private javax.swing.JLabel HumanLeft;
+    private javax.swing.JLabel HumanLeft1;
+    private javax.swing.JLabel HumanRight;
+    private javax.swing.JLabel HumanRight1;
+    private javax.swing.JLabel LionLeft;
+    private javax.swing.JLabel LionRight;
     private javax.swing.JLabel ShipImage;
-    private javax.swing.JLabel SwapBtn;
+    private javax.swing.JButton SwapBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
