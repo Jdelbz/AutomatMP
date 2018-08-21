@@ -77,9 +77,20 @@ public class Graph {
         return null;
     }
     
-    //function to be used when user inputs a character: human, human, lion, cow, grain
-    public void moveCurrentViaInput(String input){
-        
+        //function to be used when user inputs a character: human, human, lion, cow, grain
+    //if stop is false, current wont change
+    public boolean moveCurrentViaInput(String input){
+        ArrayList<Node> nextNodes = current.getNext();
+        boolean stop = false;
+        for(int i = 0; i < nextNodes.size() && !stop;i++){
+            for (int j = 0; j < nextNodes.get(i).getInputs().size() && !stop; j++){
+                if (input.equals(nextNodes.get(i).getInputs().get(j))){
+                    current = nextNodes.get(i);
+                    stop = true;
+                }
+            }
+        }
+        return stop;
     }
     
 }
