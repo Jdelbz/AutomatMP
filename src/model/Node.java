@@ -45,6 +45,10 @@ public class Node {
         return pNext;
     }
     
+    public ArrayList<String> getInputs() {
+        return inputs;
+    }
+    
     public boolean getIsVisited(){
         return isVisited;
     }
