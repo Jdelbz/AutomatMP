@@ -49,6 +49,10 @@ public class Node {
         return inputs;
     }
     
+    public void setInputs(ArrayList<String> inputs) {
+        this.inputs = inputs;
+    }
+    
     public boolean getIsVisited(){
         return isVisited;
     }

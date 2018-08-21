@@ -21,133 +21,136 @@ public class AUTOMAT_MP {
     public static void main(String[] args) {
         MainView view = new MainView();
         ArrayList<String> inputs = new ArrayList<String>();
+        ArrayList<String> inputs1 = new ArrayList<String>();
+        ArrayList<String> inputs2 = new ArrayList<String>();
+        ArrayList<String> inputs3 = new ArrayList<String>();
+        ArrayList<String> inputs4 = new ArrayList<String>();
+        ArrayList<String> inputs5 = new ArrayList<String>();
+        ArrayList<String> inputs6 = new ArrayList<String>();
+        ArrayList<String> inputs7 = new ArrayList<String>();
+        ArrayList<String> inputs8 = new ArrayList<String>();
+        ArrayList<String> inputs9 = new ArrayList<String>();
+        ArrayList<String> inputs10 = new ArrayList<String>();
+        ArrayList<String> inputs11 = new ArrayList<String>();
+        ArrayList<String> inputs12 = new ArrayList<String>();
+        ArrayList<String> inputs13 = new ArrayList<String>();
+        ArrayList<String> inputs14 = new ArrayList<String>();
+        ArrayList<String> inputs15 = new ArrayList<String>();
+        ArrayList<String> inputs16 = new ArrayList<String>();
+        
         //first state inputs
         inputs.add("COWLION");
         inputs.add("LIONCOW");
         
         Node firstNode = new Node(0, true, false, inputs);
+        firstNode.setInputs(inputs);
         //second state inputs
+        inputs1.add("COW");
+        inputs1.add("LION");
         
-        inputs.add("COW");
-        inputs.add("LION");
-        
-        Node secondNode = new Node(1, false, false, inputs);
+        Node secondNode = new Node(1, false, false, inputs1);
         //third state inputs
-        inputs.clear();
-        inputs.add("COW");
-        inputs.add("HUMANCOW");
-        inputs.add("COWHUMAN");
-        inputs.add("COWGRAIN");
-        inputs.add("GRAINCOW");
+        inputs2.add("COW");
+        inputs2.add("HUMANCOW");
+        inputs2.add("COWHUMAN");
+        inputs2.add("COWGRAIN");
+        inputs2.add("GRAINCOW");
         
-        Node thirdNode = new Node(2, false, false, inputs);
+        Node thirdNode = new Node(2, false, false, inputs2);
         //fourth state inputs
-        inputs.clear();
-        inputs.add("HUMANCOW");
-        inputs.add("COWHUMAN");
-        inputs.add("COWLION");
-        inputs.add("LIONCOW");
-        inputs.add("HUMANLION");
-        inputs.add("LIONHUMAN");
-        Node fourthNode = new Node(3, false, false, inputs);
+        inputs3.add("HUMANCOW");
+        inputs3.add("COWHUMAN");
+        inputs3.add("COWLION");
+        inputs3.add("LIONCOW");
+        inputs3.add("HUMANLION");
+        inputs3.add("LIONHUMAN");
+        Node fourthNode = new Node(3, false, false, inputs3);
         //fifth state inputs
-        inputs.clear();
-        inputs.add("LION");
-        inputs.add("HUMANLION");
-        inputs.add("LIONHUMAN");
-        inputs.add("HUMANGRAIN");
-        inputs.add("GRAINHUMAN");
-        inputs.add("HUMANHUMAN");
-        Node fifthNode = new Node(4, false, false, inputs);
+        inputs4.add("LION");
+        inputs4.add("HUMANLION");
+        inputs4.add("LIONHUMAN");
+        inputs4.add("HUMANGRAIN");
+        inputs4.add("GRAINHUMAN");
+        inputs4.add("HUMANHUMAN");
+        Node fifthNode = new Node(4, false, false, inputs4);
         //sixth state inputs
-        inputs.clear();
-        inputs.add("COW");
-        inputs.add("GRAINLION");
-        inputs.add("LIONGRAIN");
-        inputs.add("COWGRAIN");
-        inputs.add("GRAINCOW");
-        inputs.add("COWLION");
-        inputs.add("LIONCOW");
-        Node sixthNode = new Node(5, false, false, inputs);
+        inputs5.add("COW");
+        inputs5.add("GRAINLION");
+        inputs5.add("LIONGRAIN");
+        inputs5.add("COWGRAIN");
+        inputs5.add("GRAINCOW");
+        inputs5.add("COWLION");
+        inputs5.add("LIONCOW");
+        Node sixthNode = new Node(5, false, false, inputs5);
         //seventh state inputs
-        inputs.clear();
-        inputs.add("COWLION");
-        inputs.add("LIONCOW");
-        Node seventhNode = new Node(6, false, false, inputs);
+        inputs6.add("COWLION");
+        inputs6.add("LIONCOW");
+        Node seventhNode = new Node(6, false, false, inputs6);
         //eight state inputs
-        inputs.add("HUMANCOW");
-        inputs.add("COWHUMAN");
-        Node eighthNode = new Node(7, false, false, inputs);
+        inputs7.add("COWLION");
+        inputs7.add("LIONCOW");
+        inputs7.add("HUMANCOW");
+        inputs7.add("COWHUMAN");
+        Node eighthNode = new Node(7, false, false, inputs7);
         //ninth state inputs
-        inputs.clear();
-        inputs.add("HUMANHUMAN");
-        inputs.add("COW");
-        inputs.add("HUMANCOW");
-        inputs.add("COWHUMAN");
-        Node ninthNode = new Node(8, false, false, inputs);
+        inputs8.add("HUMANHUMAN");
+        inputs8.add("COW");
+        inputs8.add("HUMANCOW");
+        inputs8.add("COWHUMAN");
+        Node ninthNode = new Node(8, false, false, inputs8);
         //tenth state inputs
-        inputs.clear();
-        inputs.add("COW");
-        inputs.add("COWLION");
-        inputs.add("LIONCOW");
-        inputs.add("COWGRAIN");
-        inputs.add("GRAINCOW");
-        inputs.add("GRAINLION");
-        inputs.add("LIONGRAIN");
-        Node tenthNode = new Node(9, false, false, inputs);
+        inputs9.add("COW");
+        inputs9.add("COWLION");
+        inputs9.add("LIONCOW");
+        inputs9.add("COWGRAIN");
+        inputs9.add("GRAINCOW");
+        inputs9.add("GRAINLION");
+        inputs9.add("LIONGRAIN");
+        Node tenthNode = new Node(9, false, false, inputs9);
         //11th state inputs
-        inputs.clear();
-        inputs.add("COWLION");
-        inputs.add("LIONCOW");
-        Node elevnthNode = new Node(10, false, false, inputs);
+        inputs10.add("COWLION");
+        inputs10.add("LIONCOW");
+        Node elevnthNode = new Node(10, false, false, inputs10);
         //12th state inputs
-        inputs.clear();
-        inputs.add("HUMANHUMAN");
-        inputs.add("HUMANLION");
-        inputs.add("LIONHUMAN");
-        inputs.add("GRAINLION");
-        inputs.add("LIONGRAIN");
-        inputs.add("LION");
-        
-        Node twelvthNode = new Node(11, false, false, inputs);
+        inputs11.add("HUMANHUMAN");
+        inputs11.add("HUMANLION");
+        inputs11.add("LIONHUMAN");
+        inputs11.add("GRAINLION");
+        inputs11.add("LIONGRAIN");
+        inputs11.add("LION");
+        Node twelvthNode = new Node(11, false, false, inputs11);
         //13th state inputs
-        inputs.clear();
-        inputs.add("COW");
-        inputs.add("LION");
-        Node thirteenthNode = new Node(12, false, false, inputs);
+        inputs12.add("COW");
+        inputs12.add("LION");
+        Node thirteenthNode = new Node(12, false, false, inputs12);
         //14th state inputs
-        inputs.clear();
-        inputs.add("COW");
-        inputs.add("COWGRAIN");
-        inputs.add("GRAINCOW");
-        inputs.add("HUMANCOW");
-        inputs.add("COWHUMAN");
-        Node fourteenthNode = new Node(13, false, false, inputs);
+        inputs13.add("COW");
+        inputs13.add("COWGRAIN");
+        inputs13.add("GRAINCOW");
+        inputs13.add("HUMANCOW");
+        inputs13.add("COWHUMAN");
+        Node fourteenthNode = new Node(13, false, false, inputs13);
         //15th state inputs
-        inputs.clear();
-        inputs.add("COWLION");
-        inputs.add("LIONCOW");
-        inputs.add("HUMANCOW");
-        inputs.add("COWHUMAN");
-        inputs.add("HUMANLION");
-        inputs.add("LIONHUMAN");
-        Node fifteenthNode = new Node(14, false, false, inputs);
+        inputs14.add("COWLION");
+        inputs14.add("LIONCOW");
+        inputs14.add("HUMANCOW");
+        inputs14.add("COWHUMAN");
+        inputs14.add("HUMANLION");
+        inputs14.add("LIONHUMAN");
+        Node fifteenthNode = new Node(14, false, false, inputs14);
         //16th state inputs
-        inputs.clear();
-        inputs.add("COWLION");
-        inputs.add("LIONCOW");
-        inputs.add("HUMANCOW");
-        inputs.add("COWHUMAN");
-        Node sixteenthNode = new Node(15, false, false, inputs);
+        inputs15.add("COWLION");
+        inputs15.add("LIONCOW");
+        inputs15.add("HUMANCOW");
+        inputs15.add("COWHUMAN");
+        Node sixteenthNode = new Node(15, false, false, inputs15);
         //17th state inputs
-        inputs.clear();
-        inputs.add("COW");
-        inputs.add("HUMANCOW");
-        inputs.add("COWHUMAN");
-        inputs.add("HUMANHUMAN");
-        Node seventeenthNode = new Node(16, false, false, inputs);
+        inputs16.add("COW");
+        inputs16.add("HUMANCOW");
+        inputs16.add("COWHUMAN");
+        inputs16.add("HUMANHUMAN");
+        Node seventeenthNode = new Node(16, false, false, inputs16);
         //18th state inputs
-        inputs.clear();
         Node eighteenthNode = new Node(17, false, true, null);
         
         Graph firstGraph = new Graph();
@@ -217,9 +220,10 @@ public class AUTOMAT_MP {
         seventeenthNode.addNext(twelvthNode);
         seventeenthNode.addNext(sixteenthNode);
     
-        System.out.println(firstGraph.getNodes().get(2).getInputs().size());
+        System.out.println(firstGraph.getNodes().get(15).getInputs().size());
+        
         int y;
-        y = 2;
+        y = 15;
         for (int i = 0; i < firstGraph.getNodes().get(y).getInputs().size(); i++)
             System.out.println(firstGraph.getNodes().get(y).getInputs().get(i));
     }
