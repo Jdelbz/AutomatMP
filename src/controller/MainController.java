@@ -187,9 +187,9 @@ public class MainController {
         graph.setCurrent(firstNode);
         
         firstNode.addNext(secondNode);
+        secondNode.addNext(fifthNode);
         secondNode.addNext(thirdNode);
         secondNode.addNext(firstNode);
-        secondNode.addNext(fifthNode);
         thirdNode.addNext(secondNode);
         thirdNode.addNext(fourthNode);
         thirdNode.addNext(sixthNode);
@@ -206,12 +206,12 @@ public class MainController {
         seventhNode.addNext(sixthNode);
         eighthNode.addNext(ninthNode);
         eighthNode.addNext(fourthNode);
+        ninthNode.addNext(tenthNode);
         ninthNode.addNext(eighthNode);
         ninthNode.addNext(fifthNode);
-        ninthNode.addNext(tenthNode);
+        tenthNode.addNext(twelvthNode);
         tenthNode.addNext(ninthNode);
         tenthNode.addNext(elevnthNode);
-        tenthNode.addNext(twelvthNode);
         tenthNode.addNext(fourteenthNode);
         elevnthNode.addNext(tenthNode);
         twelvthNode.addNext(thirteenthNode);
@@ -232,7 +232,16 @@ public class MainController {
         seventeenthNode.addNext(sixthNode);
         seventeenthNode.addNext(twelvthNode);
         seventeenthNode.addNext(sixteenthNode);
-    
+        
+        
+        
+        ArrayList<Node> solutionPath = graph.findSolution(new ArrayList<Node>());
+        for(int i=0;i < solutionPath.size();i++){
+            System.out.println(solutionPath.get(i).getStateNumber());
+        }
+        
+//        System.out.println(solutionPath.size());
+        graph.setCurrent(firstNode);
 //        System.out.println(firstGraph.getNodes().get(15).getInputs().size());
 //        
 //        int y;

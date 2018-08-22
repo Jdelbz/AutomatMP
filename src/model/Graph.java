@@ -18,6 +18,7 @@ public class Graph {
     private ArrayList<Node> startStates = new ArrayList<Node>();
     private ArrayList<Node> finalStates = new ArrayList<Node>();
     private Node current; //where the graph is pointing at in the graph
+    private Node pPrev;
     
     Random rand = new Random();
     
@@ -63,22 +64,24 @@ public class Graph {
     //function to be used when graph object will move the current node
     //this function will be used for finding the solution
     public ArrayList<Node> findSolution(ArrayList<Node> solutionPath){
-//        if(current.isFinal()){
-//            solutionPath.add(current);
-//            return solutionPath;
-//        }
-//        else{
-//            solutionPath.add(current);
-//            current.setIsVisited(true);
-//            for (int i = 0; i < current.getNext().size(); i++){
-//                if (current.getNext().get(i).getIsVisited() == false){
-//                    current = current.getNext().get(i);
-//                    break;
-//                }
-//            }
-//            return findSolution(solutionPath);
-//        }
-        return null;
+        if(current.isFinal() || current.getIsVisited()){
+            if(current.isFinal())
+                solutionPath.add(current);
+            return solutionPath;
+        }
+        else{
+            solutionPath.add(current);
+            current.setIsVisited(true);
+            for (int i = 0; i < current.getNext().size(); i++){
+                if (current.getNext().get(i).getIsVisited() == false){
+                    pPrev = current;
+                    current = current.getNext().get(i);
+                    break;
+                }
+            }
+            return findSolution(solutionPath);
+        }
+//        return null;
     }
     
         //function to be used when user inputs a character: human, human, lion, cow, grain
