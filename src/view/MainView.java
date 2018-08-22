@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import controller.MainController;
+import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -82,12 +83,16 @@ public class MainView extends javax.swing.JFrame {
         setResizable(false);
 
         BGPanel.setBackground(new java.awt.Color(255, 255, 255));
+        BGPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ShipImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Spaceship-default.png"))); // NOI18N
+        BGPanel.add(ShipImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 146, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/earth.jpg"))); // NOI18N
+        BGPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 627, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mars.jpg"))); // NOI18N
+        BGPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 627, -1, -1));
 
         SwapBtn.setBackground(new java.awt.Color(255, 255, 255));
         SwapBtn.setText("->");
@@ -97,6 +102,7 @@ public class MainView extends javax.swing.JFrame {
                 SwapBtnActionPerformed(evt);
             }
         });
+        BGPanel.add(SwapBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 348, -1, -1));
 
         HumanRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
         HumanRight.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -104,6 +110,7 @@ public class MainView extends javax.swing.JFrame {
                 HumanRightMouseClicked(evt);
             }
         });
+        BGPanel.add(HumanRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 11, -1, -1));
 
         HumanRight1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
         HumanRight1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,6 +118,7 @@ public class MainView extends javax.swing.JFrame {
                 HumanRight1MouseClicked(evt);
             }
         });
+        BGPanel.add(HumanRight1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 135, -1, -1));
 
         LionRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lion.png"))); // NOI18N
         LionRight.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,6 +126,7 @@ public class MainView extends javax.swing.JFrame {
                 LionRightMouseClicked(evt);
             }
         });
+        BGPanel.add(LionRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 259, -1, -1));
 
         GrainRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grain.png"))); // NOI18N
         GrainRight.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -125,6 +134,7 @@ public class MainView extends javax.swing.JFrame {
                 GrainRightMouseClicked(evt);
             }
         });
+        BGPanel.add(GrainRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, -1, -1));
 
         CowRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cow.png"))); // NOI18N
         CowRight.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -132,6 +142,7 @@ public class MainView extends javax.swing.JFrame {
                 CowRightMouseClicked(evt);
             }
         });
+        BGPanel.add(CowRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 466, -1, -1));
 
         HumanLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
         HumanLeft.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -139,6 +150,7 @@ public class MainView extends javax.swing.JFrame {
                 HumanLeftMouseClicked(evt);
             }
         });
+        BGPanel.add(HumanLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 11, -1, -1));
 
         HumanLeft1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Human.png"))); // NOI18N
         HumanLeft1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -146,6 +158,7 @@ public class MainView extends javax.swing.JFrame {
                 HumanLeft1MouseClicked(evt);
             }
         });
+        BGPanel.add(HumanLeft1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 140, -1, -1));
 
         LionLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lion.png"))); // NOI18N
         LionLeft.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -153,6 +166,7 @@ public class MainView extends javax.swing.JFrame {
                 LionLeftMouseClicked(evt);
             }
         });
+        BGPanel.add(LionLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 264, -1, -1));
 
         GrainLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grain.png"))); // NOI18N
         GrainLeft.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,6 +174,7 @@ public class MainView extends javax.swing.JFrame {
                 GrainLeftMouseClicked(evt);
             }
         });
+        BGPanel.add(GrainLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 365, -1, -1));
 
         CowLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cow.png"))); // NOI18N
         CowLeft.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -167,84 +182,7 @@ public class MainView extends javax.swing.JFrame {
                 CowLeftMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout BGPanelLayout = new javax.swing.GroupLayout(BGPanel);
-        BGPanel.setLayout(BGPanelLayout);
-        BGPanelLayout.setHorizontalGroup(
-            BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BGPanelLayout.createSequentialGroup()
-                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BGPanelLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel1))
-                    .addGroup(BGPanelLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(HumanLeft1)
-                            .addComponent(HumanLeft)
-                            .addComponent(LionLeft)
-                            .addComponent(GrainLeft)
-                            .addComponent(CowLeft))))
-                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(BGPanelLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(SwapBtn))
-                    .addGroup(BGPanelLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(ShipImage)))
-                .addGap(20, 20, 20)
-                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(HumanRight, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(HumanRight1, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(LionRight, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGPanelLayout.createSequentialGroup()
-                            .addComponent(GrainRight)
-                            .addGap(10, 10, 10))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGPanelLayout.createSequentialGroup()
-                            .addComponent(CowRight)
-                            .addGap(6, 6, 6))))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        BGPanelLayout.setVerticalGroup(
-            BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BGPanelLayout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(ShipImage)
-                .addGap(49, 49, 49)
-                .addComponent(SwapBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(BGPanelLayout.createSequentialGroup()
-                        .addComponent(HumanRight)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(HumanRight1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LionRight)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GrainRight)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CowRight)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(BGPanelLayout.createSequentialGroup()
-                        .addComponent(HumanLeft)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                        .addComponent(HumanLeft1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LionLeft)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GrainLeft)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CowLeft)
-                        .addGap(43, 43, 43)))
-                .addGroup(BGPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addContainerGap())
-        );
+        BGPanel.add(CowLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 471, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
