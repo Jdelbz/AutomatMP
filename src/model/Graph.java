@@ -86,9 +86,10 @@ public class Graph {
     public boolean moveCurrentViaInput(String input){
         ArrayList<Node> nextNodes = current.getNext();
         boolean stop = false;
-        System.out.println("BEFORE FOR LOOP");
         for(int i = 0; i < nextNodes.size() && !stop;i++){
             for (int j = 0; j < nextNodes.get(i).getInputs().size() && !stop; j++){
+//                System.out.println(input);
+//                System.out.println(input.equals(nextNodes.get(i).getInputs().get(j)));
                 if (input.equals(nextNodes.get(i).getInputs().get(j))){
                     current = nextNodes.get(i);
                     stop = true;

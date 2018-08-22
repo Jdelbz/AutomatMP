@@ -497,7 +497,8 @@ public class MainView extends javax.swing.JFrame {
             }
             SwapBtn.setLabel("<-");
             location = 1;
-            if(!control.getGraph().moveCurrentViaInput(inputString)){
+            System.out.println(inputString);
+            if(!control.getGraph().moveCurrentViaInput(inputString + control.getGraph().getCurrent().getStateNumber())){
                 JOptionPane.showMessageDialog(new JFrame(),
                 "You failed your mission :(",
                 "Invalid Move",
@@ -505,6 +506,7 @@ public class MainView extends javax.swing.JFrame {
                 System.exit(1);
             }
             System.out.println(control.getGraph().getCurrent().getStateNumber());
+            inputString = "";
         } else if(location == 1){
             if(humanSelected == 1){
                 HumanLeft.setVisible(true);
@@ -538,7 +540,8 @@ public class MainView extends javax.swing.JFrame {
             }
             SwapBtn.setLabel("->");
             location = 0;
-            if(!control.getGraph().moveCurrentViaInput(inputString)){
+//            System.out.println(inputString + control.getGraph().getCurrent().getStateNumber());
+            if(!control.getGraph().moveCurrentViaInput(inputString  + control.getGraph().getCurrent().getStateNumber())){
                 JOptionPane.showMessageDialog(new JFrame(),
                 "You failed your mission :(",
                 "Invalid Move",
@@ -546,6 +549,7 @@ public class MainView extends javax.swing.JFrame {
                 System.exit(1);
             }
             System.out.println(control.getGraph().getCurrent().getStateNumber());
+            inputString = "";
         }
     }//GEN-LAST:event_SwapBtnActionPerformed
 
