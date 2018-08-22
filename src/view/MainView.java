@@ -77,6 +77,7 @@ public class MainView extends javax.swing.JFrame {
         LionLeft = new javax.swing.JLabel();
         GrainLeft = new javax.swing.JLabel();
         CowLeft = new javax.swing.JLabel();
+        StateIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -184,6 +185,9 @@ public class MainView extends javax.swing.JFrame {
         });
         BGPanel.add(CowLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 471, -1, -1));
 
+        StateIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/S1.png"))); // NOI18N
+        BGPanel.add(StateIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -192,7 +196,9 @@ public class MainView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BGPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(BGPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -541,6 +547,13 @@ public class MainView extends javax.swing.JFrame {
                 System.exit(1);
             }
             System.out.println(control.getGraph().getCurrent().getStateNumber());
+            int stateNum = control.getGraph().getCurrent().getStateNumber()+1;
+            String s = "../images/S";
+            s.concat(Integer.toString(stateNum));
+            s.concat(".png");
+            StateIcon.setIcon(new ImageIcon(getClass().getResource(s)));
+            StateIcon.revalidate();
+            System.out.println(s);
             inputString = "";
         } else if(location == 1){
             if(humanSelected == 1){
@@ -586,6 +599,13 @@ public class MainView extends javax.swing.JFrame {
                 System.exit(1);
             }
             System.out.println(control.getGraph().getCurrent().getStateNumber());
+            int stateNum = control.getGraph().getCurrent().getStateNumber()-1;
+            String s = "../images/S";
+            s.concat(Integer.toString(stateNum));
+            s.concat(".png");
+            StateIcon.setIcon(new ImageIcon(getClass().getResource(s)));
+            StateIcon.revalidate();
+            System.out.println(s);
             inputString = "";
         }
     }//GEN-LAST:event_SwapBtnActionPerformed
@@ -638,6 +658,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel LionLeft;
     private javax.swing.JLabel LionRight;
     private javax.swing.JLabel ShipImage;
+    private javax.swing.JLabel StateIcon;
     private javax.swing.JButton SwapBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
