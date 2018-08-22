@@ -604,6 +604,13 @@ public class MainView extends javax.swing.JFrame {
             System.out.println(s);
             inputString = "";
         }
+        if (control.getGraph().getCurrent().getStateNumber() == 17 ){
+            JOptionPane.showMessageDialog(new JFrame(),
+            "YOU DID IT! :)",
+            "YOU WON",
+            JOptionPane.PLAIN_MESSAGE);
+            System.exit(1);
+        }
     }//GEN-LAST:event_SwapBtnActionPerformed
 
     /**
