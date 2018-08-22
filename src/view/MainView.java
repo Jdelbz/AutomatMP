@@ -12,6 +12,8 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import controller.MainController;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -524,64 +526,83 @@ public class MainView extends javax.swing.JFrame {
                 HumanRight.setVisible(true);
                 humanSelected = 0;
                 numOfSelected--;
-                inputString.concat("HUMAN");
+                inputString = inputString + "HUMAN";
             }
             if(humanSelected1 == 1){
                 HumanRight1.setVisible(true);
                 humanSelected1 = 0;
                 numOfSelected--;
-                inputString.concat("HUMAN");
+                inputString = inputString + "HUMAN";
             }
             if(lionSelected == 1){
                 LionRight.setVisible(true);
                 lionSelected = 0;
                 numOfSelected--;
-                inputString.concat("LION");
+                inputString = inputString + "LION";
             }
             if(cowSelected == 1){
                 CowRight.setVisible(true);
                 cowSelected = 0;
                 numOfSelected--;
-                inputString.concat("COW");
+                inputString = inputString + "COW";
             }
             if(grainSelected == 1){
                 GrainRight.setVisible(true);
                 grainSelected = 0;
                 numOfSelected--;
-                inputString.concat("GRAIN");
+                inputString = inputString + "GRAIN";
             }
             SwapBtn.setLabel("<-");
             location = 1;
-            control.getGraph().moveCurrentViaInput(inputString);
+            if(!control.getGraph().moveCurrentViaInput(inputString)){
+                JOptionPane.showMessageDialog(new JFrame(),
+                "You failed your mission :(",
+                "Invalid Move",
+                JOptionPane.ERROR_MESSAGE);
+                System.exit(1);
+            }
             System.out.println(control.getGraph().getCurrent().getStateNumber());
         } else if(location == 1){
             if(humanSelected == 1){
                 HumanLeft.setVisible(true);
                 humanSelected = 0;
                 numOfSelected--;
+                inputString = inputString + "HUMAN";
             }
             if(humanSelected1 == 1){
                 HumanLeft1.setVisible(true);
                 humanSelected1 = 0;
                 numOfSelected--;
+                inputString = inputString + "HUMAN";
             }
             if(lionSelected == 1){
                 LionLeft.setVisible(true);
                 lionSelected = 0;
                 numOfSelected--;
+                inputString = inputString + "LION";
             }
             if(cowSelected == 1){
                 CowLeft.setVisible(true);
                 cowSelected = 0;
                 numOfSelected--;
+                inputString = inputString + "COW";
             }
             if(grainSelected == 1){
                 GrainLeft.setVisible(true);
                 grainSelected = 0;
                 numOfSelected--;
+                inputString = inputString + "GRAIN";
             }
             SwapBtn.setLabel("->");
             location = 0;
+            if(!control.getGraph().moveCurrentViaInput(inputString)){
+                JOptionPane.showMessageDialog(new JFrame(),
+                "You failed your mission :(",
+                "Invalid Move",
+                JOptionPane.ERROR_MESSAGE);
+                System.exit(1);
+            }
+            System.out.println(control.getGraph().getCurrent().getStateNumber());
         }
     }//GEN-LAST:event_SwapBtnActionPerformed
 

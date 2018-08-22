@@ -43,6 +43,7 @@ public class MainController {
         ArrayList<String> inputs14 = new ArrayList<String>();
         ArrayList<String> inputs15 = new ArrayList<String>();
         ArrayList<String> inputs16 = new ArrayList<String>();
+        ArrayList<String> inputs17 = new ArrayList<String>();
         
         //first state inputs
         inputs.add("COWLION");
@@ -53,6 +54,8 @@ public class MainController {
         //second state inputs
         inputs1.add("COW");
         inputs1.add("LION");
+        inputs1.add("COWLION");
+        inputs1.add("LIONCOW");
         
         Node secondNode = new Node(1, false, false, inputs1);
         //third state inputs
@@ -157,7 +160,7 @@ public class MainController {
         inputs16.add("HUMANHUMAN");
         Node seventeenthNode = new Node(16, false, false, inputs16);
         //18th state inputs
-        Node eighteenthNode = new Node(17, false, true, null);
+        Node eighteenthNode = new Node(17, false, true, inputs17);
         
         Graph firstGraph = new Graph();
         firstGraph.appendNode(firstNode);
