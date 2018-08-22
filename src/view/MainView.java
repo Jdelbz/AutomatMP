@@ -633,8 +633,11 @@ public class MainView extends javax.swing.JFrame {
         for(int i=0;i < solutionPath.size();i++){
             if(i-1 > -1){
                 for (int j = 0; j < solutionPath.get(i).getInputs().size(); j++){
-                    if (solutionPath.get(i).getInputs().get(j).contains(Integer.toString(solutionPath.get(i-1).getStateNumber())))
+                    if (solutionPath.get(i).getInputs().get(j).contains(Integer.toString(solutionPath.get(i-1).getStateNumber()))){
                         input = solutionPath.get(i).getInputs().get(j);
+                        input = input.replaceAll("\\d", "");
+                    }
+                    
                 }
             }
             
