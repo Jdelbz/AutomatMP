@@ -13,10 +13,16 @@ import view.MainView;
  */
 public class MainController {
     
+    private Graph graph;
+    
     private MainView View;
     public MainController(MainView View){
         this.View = View;
         initialize();
+    }
+
+    public Graph getGraph() {
+        return graph;
     }
     
     public void initialize(){
@@ -172,6 +178,8 @@ public class MainController {
         firstGraph.appendNode(sixteenthNode);
         firstGraph.appendNode(seventeenthNode);
         firstGraph.appendNode(eighteenthNode);
+        graph = firstGraph;
+        graph.setCurrent(firstNode);
         
         firstNode.addNext(secondNode);
         secondNode.addNext(thirdNode);
@@ -220,11 +228,11 @@ public class MainController {
         seventeenthNode.addNext(twelvthNode);
         seventeenthNode.addNext(sixteenthNode);
     
-        System.out.println(firstGraph.getNodes().get(15).getInputs().size());
-        
-        int y;
-        y = 15;
-        for (int i = 0; i < firstGraph.getNodes().get(y).getInputs().size(); i++)
-            System.out.println(firstGraph.getNodes().get(y).getInputs().get(i));
+//        System.out.println(firstGraph.getNodes().get(15).getInputs().size());
+//        
+//        int y;
+//        y = 15;
+//        for (int i = 0; i < firstGraph.getNodes().get(y).getInputs().size(); i++)
+//            System.out.println(firstGraph.getNodes().get(y).getInputs().get(i));
     }
 }

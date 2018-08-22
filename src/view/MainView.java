@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import controller.MainController;
 
 /**
  *
@@ -29,11 +30,16 @@ public class MainView extends javax.swing.JFrame {
     private int cowSelected = 0;
     private int lionSelected = 0;
     private int grainSelected = 0;
+    private MainController control; 
     
     public MainView() {
         initComponents();
         initImages();
         setVisible(true);
+    }
+    
+    public void setControl(MainController control){
+        this.control = control;
     }
     
     public void initImages(){
@@ -512,34 +518,42 @@ public class MainView extends javax.swing.JFrame {
 
     private void SwapBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SwapBtnActionPerformed
         // TODO add your handling code here:
+        String inputString = "";
         if(location == 0){
             if(humanSelected == 1){
                 HumanRight.setVisible(true);
                 humanSelected = 0;
                 numOfSelected--;
+                inputString.concat("HUMAN");
             }
             if(humanSelected1 == 1){
                 HumanRight1.setVisible(true);
                 humanSelected1 = 0;
                 numOfSelected--;
+                inputString.concat("HUMAN");
             }
             if(lionSelected == 1){
                 LionRight.setVisible(true);
                 lionSelected = 0;
                 numOfSelected--;
+                inputString.concat("LION");
             }
             if(cowSelected == 1){
                 CowRight.setVisible(true);
                 cowSelected = 0;
                 numOfSelected--;
+                inputString.concat("COW");
             }
             if(grainSelected == 1){
                 GrainRight.setVisible(true);
                 grainSelected = 0;
                 numOfSelected--;
+                inputString.concat("GRAIN");
             }
             SwapBtn.setLabel("<-");
             location = 1;
+            control.getGraph().moveCurrentViaInput(inputString);
+            System.out.println(control.getGraph().getCurrent().getStateNumber());
         } else if(location == 1){
             if(humanSelected == 1){
                 HumanLeft.setVisible(true);

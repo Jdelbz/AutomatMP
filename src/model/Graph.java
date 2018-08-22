@@ -56,6 +56,10 @@ public class Graph {
         return current;
     }
     
+    public void setCurrent(Node current){
+        this.current = current;
+    }
+    
     //function to be used when graph object will move the current node
     //this function will be used for finding the solution
     public ArrayList<Node> findSolution(ArrayList<Node> solutionPath){

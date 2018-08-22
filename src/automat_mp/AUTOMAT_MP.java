@@ -22,6 +22,7 @@ public class AUTOMAT_MP {
     public static void main(String[] args) {
         MainView View = new MainView();
         MainController Controller = new MainController(View);
+        View.setControl(Controller);
         
     }
     
