@@ -12,9 +12,11 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import controller.MainController;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import model.Node;
 
 /**
  *
@@ -78,6 +80,7 @@ public class MainView extends javax.swing.JFrame {
         GrainLeft = new javax.swing.JLabel();
         CowLeft = new javax.swing.JLabel();
         StateIcon = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -187,6 +190,14 @@ public class MainView extends javax.swing.JFrame {
 
         StateIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/S1.png"))); // NOI18N
         BGPanel.add(StateIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, -1, -1));
+
+        jButton1.setText("Hint");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        BGPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 690, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -613,6 +624,17 @@ public class MainView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SwapBtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Node currentTemp = control.getGraph().getCurrent();
+        ArrayList<Node> solutionPath = control.getGraph().findSolution(new ArrayList<Node>());
+        for(int i=0;i < solutionPath.size();i++){
+            System.out.println(solutionPath.get(i).getStateNumber());
+            solutionPath.get(i).setIsVisited(false);
+        }
+        control.getGraph().setCurrent(currentTemp);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -663,6 +685,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel ShipImage;
     private javax.swing.JLabel StateIcon;
     private javax.swing.JButton SwapBtn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

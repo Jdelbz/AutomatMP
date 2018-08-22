@@ -64,6 +64,7 @@ public class Graph {
     //function to be used when graph object will move the current node
     //this function will be used for finding the solution
     public ArrayList<Node> findSolution(ArrayList<Node> solutionPath){
+        boolean check = true;
         if(current.isFinal() || current.getIsVisited()){
             if(current.isFinal())
                 solutionPath.add(current);
@@ -76,8 +77,12 @@ public class Graph {
                 if (current.getNext().get(i).getIsVisited() == false){
                     pPrev = current;
                     current = current.getNext().get(i);
+                    check = false;
                     break;
                 }
+            }
+            if (check){
+                current = pPrev;
             }
             return findSolution(solutionPath);
         }
