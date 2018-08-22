@@ -629,7 +629,12 @@ public class MainView extends javax.swing.JFrame {
         Node currentTemp = control.getGraph().getCurrent();
         ArrayList<Node> solutionPath = control.getGraph().findSolution(new ArrayList<Node>());
         for(int i=0;i < solutionPath.size();i++){
-            System.out.println(solutionPath.get(i).getStateNumber());
+            System.out.println((solutionPath.get(i).getStateNumber()+1));
+            if(i == 0){
+                String s = "../images/S" + Integer.toString(solutionPath.get(i).getStateNumber()+1) + "Solution.png";
+                System.out.println(s);
+                StateIcon.setIcon(new ImageIcon(getClass().getResource(s)));
+            }
             solutionPath.get(i).setIsVisited(false);
         }
         control.getGraph().setCurrent(currentTemp);
