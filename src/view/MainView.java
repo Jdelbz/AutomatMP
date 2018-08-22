@@ -597,7 +597,7 @@ public class MainView extends javax.swing.JFrame {
                 System.exit(1);
             }
             System.out.println(control.getGraph().getCurrent().getStateNumber());
-            int stateNum = control.getGraph().getCurrent().getStateNumber()-1;
+            int stateNum = control.getGraph().getCurrent().getStateNumber()+1;
             String s = "../images/S" + Integer.toString(stateNum) + ".png"; 
             StateIcon.setIcon(new ImageIcon(getClass().getResource(s)));
             StateIcon.revalidate();
