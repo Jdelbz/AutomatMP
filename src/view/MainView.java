@@ -629,8 +629,17 @@ public class MainView extends javax.swing.JFrame {
         Node currentTemp = control.getGraph().getCurrent();
         ArrayList<Node> solutionPath = control.getGraph().findSolution(new ArrayList<Node>());
         String notification = "";
+        String input = "";
         for(int i=0;i < solutionPath.size();i++){
-            notification = notification + "Go to State " + (solutionPath.get(i).getStateNumber()+1)+ System.lineSeparator();
+            if(i-1 > -1){
+                for (int j = 0; j < solutionPath.get(i).getInputs().size(); j++){
+                    if (solutionPath.get(i).getInputs().get(j).contains(Integer.toString(solutionPath.get(i-1).getStateNumber())))
+                        input = solutionPath.get(i).getInputs().get(j);
+                }
+            }
+            
+            if (i!=0)
+                notification = notification + "Go to State " + (solutionPath.get(i).getStateNumber()+1)+ " input: "+ input+System.lineSeparator();
             if(i == 0){
                 String s = "../images/S" + Integer.toString(solutionPath.get(i).getStateNumber()+1) + "Solution.png";
                 System.out.println(s);
