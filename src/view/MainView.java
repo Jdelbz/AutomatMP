@@ -205,20 +205,25 @@ public class MainView extends javax.swing.JFrame {
             humanSelected = 1;
             HumanLeft.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Human.png"))));
-                } catch(IOException e){
-          
-                }
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Human.png")));
+                    ShipImage.revalidate();
             }else{
                 if(humanSelected1 == 1){
                     //setIcon to images/Spaceship-HumanHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanHuman.png")));
+                    ShipImage.revalidate();
                 } else if(lionSelected == 1){
                     //setIcon to images/Spaceship-HumanLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanLion.png")));
+                    ShipImage.revalidate();
                 } else if(cowSelected == 1){
                     //setIcon to images/Spaceship-CowHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowHuman.png")));
+                    ShipImage.revalidate();
                 } else if(grainSelected == 1){
                     //setIcon to images/Spaceship-GrainHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainHuman.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have 1 human
