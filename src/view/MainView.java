@@ -237,20 +237,25 @@ public class MainView extends javax.swing.JFrame {
             humanSelected1 = 1;
             HumanLeft1.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Human.png"))));
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Human.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected == 1){
                     //setIcon to images/Spaceship-HumanHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanHuman.png")));
+                    ShipImage.revalidate();
                 } else if(lionSelected == 1){
                     //setIcon to images/Spaceship-HumanLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanLion.png")));
+                    ShipImage.revalidate();
                 } else if(cowSelected == 1){
                     //setIcon to images/Spaceship-CowHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowHuman.png")));
+                    ShipImage.revalidate();
                 } else if(grainSelected == 1){
                     //setIcon to images/Spaceship-GrainHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainHuman.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have 1 human
@@ -264,18 +269,21 @@ public class MainView extends javax.swing.JFrame {
             lionSelected = 1;
             LionLeft.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Lion.png"))));
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Lion.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected == 1 || humanSelected1 == 1){
                     //setIcon to images/Spaceship-HumanLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanLion.png")));
+                    ShipImage.revalidate();
                 } else if(cowSelected == 1){
                     //setIcon to images/Spaceship-CowLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowLion.png")));
+                    ShipImage.revalidate();
                 } else if(grainSelected == 1){
                     //setIcon to images/Spaceship-GrainLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainLion.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have lion
@@ -289,18 +297,21 @@ public class MainView extends javax.swing.JFrame {
             grainSelected = 1;
             GrainLeft.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Grain.png"))));
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Grain.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected == 1 || humanSelected1 == 1){
                     //setIcon to images/Spaceship-GrainHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainHuman.png")));
+                    ShipImage.revalidate();
                 } else if(lionSelected == 1){
                     //setIcon to images/Spaceship-GrainLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainLion.png")));
+                    ShipImage.revalidate();
                 } else if(cowSelected == 1){
                     //setIcon to images/Spaceship-CowGrain.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowGrain.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have grain
@@ -314,18 +325,21 @@ public class MainView extends javax.swing.JFrame {
             cowSelected = 1;
             CowLeft.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Cow.png")))); //this throws an IOException
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Cow.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected == 1 || humanSelected1 == 1){
                     //setIcon to images/Spaceship-CowHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowHuman.png")));
+                    ShipImage.revalidate();
                 } else if(lionSelected == 1){
                     //setIcon to images/Spaceship-CowLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowLion.png")));
+                    ShipImage.revalidate();
                 }else if(grainSelected == 1){
                     //setIcon to images/Spaceship-CowGrain.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowGrain.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have cow
@@ -339,20 +353,25 @@ public class MainView extends javax.swing.JFrame {
             humanSelected = 1;
             HumanRight.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Human.png"))));
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Human.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected1 == 1){
                     //setIcon to images/Spaceship-HumanHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanHuman.png")));
+                    ShipImage.revalidate();
                 } else if(lionSelected == 1){
                     //setIcon to images/Spaceship-HumanLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanLion.png")));
+                    ShipImage.revalidate();
                 } else if(cowSelected == 1){
                     //setIcon to images/Spaceship-CowHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowHuman.png")));
+                    ShipImage.revalidate();
                 } else if(grainSelected == 1){
                     //setIcon to images/Spaceship-GrainHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainHuman.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have 1 human
@@ -366,20 +385,25 @@ public class MainView extends javax.swing.JFrame {
             humanSelected1 = 1;
             HumanRight1.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Human.png"))));
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Human.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected == 1){
                     //setIcon to images/Spaceship-HumanHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanHuman.png")));
+                    ShipImage.revalidate();
                 } else if(lionSelected == 1){
                     //setIcon to images/Spaceship-HumanLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanLion.png")));
+                    ShipImage.revalidate();
                 } else if(cowSelected == 1){
                     //setIcon to images/Spaceship-CowHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowHuman.png")));
+                    ShipImage.revalidate();
                 } else if(grainSelected == 1){
                     //setIcon to images/Spaceship-GrainHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainHuman.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have 1 human
@@ -393,18 +417,21 @@ public class MainView extends javax.swing.JFrame {
             lionSelected = 1;
             LionRight.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Lion.png"))));
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Lion.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected == 1 || humanSelected1 == 1){
                     //setIcon to images/Spaceship-HumanLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-HumanLion.png")));
+                    ShipImage.revalidate();
                 } else if(cowSelected == 1){
                     //setIcon to images/Spaceship-CowLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowLion.png")));
+                    ShipImage.revalidate();
                 } else if(grainSelected == 1){
                     //setIcon to images/Spaceship-GrainLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainLion.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have lion
@@ -418,18 +445,21 @@ public class MainView extends javax.swing.JFrame {
             grainSelected = 1;
             GrainRight.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Grain.png"))));
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Grain.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected == 1 || humanSelected1 == 1){
                     //setIcon to images/Spaceship-GrainHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainHuman.png")));
+                    ShipImage.revalidate();
                 } else if(lionSelected == 1){
                     //setIcon to images/Spaceship-GrainLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-GrainLion.png")));
+                    ShipImage.revalidate();
                 } else if(cowSelected == 1){
                     //setIcon to images/Spaceship-CowGrain.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowGrain.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have grain
@@ -443,18 +473,21 @@ public class MainView extends javax.swing.JFrame {
             cowSelected = 1;
             CowRight.setVisible(false);
             if(numOfSelected == 1){
-                try{
-                    ShipImage.setIcon(new ImageIcon(ImageIO.read(new File("images/Spaceship-Cow.png")))); //this throws an IOException
-                } catch(IOException e){
-          
-                }
+                ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-Cow.png")));
+                ShipImage.revalidate();
             }else{
                 if(humanSelected == 1 || humanSelected1 == 1){
                     //setIcon to images/Spaceship-CowHuman.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowHuman.png")));
+                    ShipImage.revalidate();
                 } else if(lionSelected == 1){
                     //setIcon to images/Spaceship-CowLion.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowLion.png")));
+                    ShipImage.revalidate();
                 }else if(grainSelected == 1){
                     //setIcon to images/Spaceship-CowGrain.png
+                    ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-CowGrain.png")));
+                    ShipImage.revalidate();
                 }
             }
             //spaceship will have cow
@@ -497,6 +530,8 @@ public class MainView extends javax.swing.JFrame {
             }
             SwapBtn.setLabel("<-");
             location = 1;
+            ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-default.png")));
+            ShipImage.revalidate();
             System.out.println(inputString);
             if(!control.getGraph().moveCurrentViaInput(inputString + control.getGraph().getCurrent().getStateNumber())){
                 JOptionPane.showMessageDialog(new JFrame(),
@@ -540,6 +575,8 @@ public class MainView extends javax.swing.JFrame {
             }
             SwapBtn.setLabel("->");
             location = 0;
+            ShipImage.setIcon(new ImageIcon(getClass().getResource("../images/Spaceship-default.png")));
+            ShipImage.revalidate();
 //            System.out.println(inputString + control.getGraph().getCurrent().getStateNumber());
             if(!control.getGraph().moveCurrentViaInput(inputString  + control.getGraph().getCurrent().getStateNumber())){
                 JOptionPane.showMessageDialog(new JFrame(),
