@@ -628,8 +628,9 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
         Node currentTemp = control.getGraph().getCurrent();
         ArrayList<Node> solutionPath = control.getGraph().findSolution(new ArrayList<Node>());
+        String notification = "";
         for(int i=0;i < solutionPath.size();i++){
-            System.out.println((solutionPath.get(i).getStateNumber()+1));
+            notification = notification + "Go to State " + (solutionPath.get(i).getStateNumber()+1)+ System.lineSeparator();
             if(i == 0){
                 String s = "../images/S" + Integer.toString(solutionPath.get(i).getStateNumber()+1) + "Solution.png";
                 System.out.println(s);
@@ -638,6 +639,12 @@ public class MainView extends javax.swing.JFrame {
             solutionPath.get(i).setIsVisited(false);
         }
         control.getGraph().setCurrent(currentTemp);
+        
+        JOptionPane.showMessageDialog(new JFrame(),
+        notification,
+        "Hint",
+        JOptionPane.PLAIN_MESSAGE);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
