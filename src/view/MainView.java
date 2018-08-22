@@ -548,12 +548,10 @@ public class MainView extends javax.swing.JFrame {
             }
             System.out.println(control.getGraph().getCurrent().getStateNumber());
             int stateNum = control.getGraph().getCurrent().getStateNumber()+1;
-            String s = "../images/S";
-            s.concat(Integer.toString(stateNum));
-            s.concat(".png");
+            String s = "../images/S" + Integer.toString(stateNum) + ".png";
+            System.out.println(s);
             StateIcon.setIcon(new ImageIcon(getClass().getResource(s)));
             StateIcon.revalidate();
-            System.out.println(s);
             inputString = "";
         } else if(location == 1){
             if(humanSelected == 1){
@@ -600,9 +598,7 @@ public class MainView extends javax.swing.JFrame {
             }
             System.out.println(control.getGraph().getCurrent().getStateNumber());
             int stateNum = control.getGraph().getCurrent().getStateNumber()-1;
-            String s = "../images/S";
-            s.concat(Integer.toString(stateNum));
-            s.concat(".png");
+            String s = "../images/S" + Integer.toString(stateNum) + ".png"; 
             StateIcon.setIcon(new ImageIcon(getClass().getResource(s)));
             StateIcon.revalidate();
             System.out.println(s);
