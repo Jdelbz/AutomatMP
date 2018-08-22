@@ -190,11 +190,11 @@ public class MainController {
         secondNode.addNext(fifthNode);
         secondNode.addNext(thirdNode);
         secondNode.addNext(firstNode);
-        thirdNode.addNext(secondNode);
         thirdNode.addNext(fourthNode);
+        thirdNode.addNext(secondNode);
         thirdNode.addNext(sixthNode);
-        fourthNode.addNext(thirdNode);
         fourthNode.addNext(eighthNode);
+        fourthNode.addNext(thirdNode);
         fourthNode.addNext(fifthNode);
         fifthNode.addNext(ninthNode);
         fifthNode.addNext(secondNode);
