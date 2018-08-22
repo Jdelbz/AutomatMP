@@ -18,7 +18,7 @@ public class Graph {
     private ArrayList<Node> startStates = new ArrayList<Node>();
     private ArrayList<Node> finalStates = new ArrayList<Node>();
     private Node current; //where the graph is pointing at in the graph
-    private Node pPrev;
+//    private Node pPrev;
     
     Random rand = new Random();
     
@@ -65,9 +65,8 @@ public class Graph {
     //this function will be used for finding the solution
     public ArrayList<Node> findSolution(ArrayList<Node> solutionPath){
         boolean check = true;
-        if(current.isFinal() || current.getIsVisited()){
-            if(current.isFinal())
-                solutionPath.add(current);
+        if(current.isFinal()){
+            solutionPath.add(current);
             return solutionPath;
         }
         else{
@@ -75,14 +74,14 @@ public class Graph {
             current.setIsVisited(true);
             for (int i = 0; i < current.getNext().size(); i++){
                 if (current.getNext().get(i).getIsVisited() == false){
-                    pPrev = current;
+//                    pPrev = current;
                     current = current.getNext().get(i);
                     check = false;
                     break;
                 }
             }
             if (check){
-                current = pPrev;
+                current = current.getNext().get(0);
             }
             return findSolution(solutionPath);
         }

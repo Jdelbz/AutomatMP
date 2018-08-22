@@ -36,11 +36,14 @@ public class MainView extends javax.swing.JFrame {
     private int lionSelected = 0;
     private int grainSelected = 0;
     private MainController control; 
+    private ImageIcon gameIcon = new ImageIcon(getClass().getResource("../images/HumanIcon.png"));
     
     public MainView() {
+        super("Automat MP");
         initComponents();
         initImages();
         setVisible(true);
+        this.setIconImage(gameIcon.getImage());
     }
     
     public void setControl(MainController control){
